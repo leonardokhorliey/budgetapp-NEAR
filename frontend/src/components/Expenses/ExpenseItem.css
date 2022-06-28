@@ -1,0 +1,99 @@
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  background-color: #4b4b4b;
+}
+
+.expense-item__description {
+  display: flex;
+  border:2px solid red;
+  flex-direction: row;
+  align-items: flex-end;
+  flex-flow: column-reverse;
+  justify-content: space-evenly;
+  flex: 1;
+  width: 100%;
+}
+
+.expense-item h2 {
+  color: #3a3a3a;
+  font-size: 1rem;
+  flex: 1;
+  margin: 0 1rem;
+  color: white;
+}
+
+.expense-item__price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #40005d;
+  border: 1px solid white;
+  border-radius: 12px;
+  width: 7.5rem;
+  text-align: center;
+}
+
+.new-expense__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.new-expense__control label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.new-expense__control input {
+  font: inherit;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 20rem;
+  max-width: 100%;
+}
+
+.new-expense__actions {
+  text-align: right;
+}
+
+@media (min-width: 580px) {
+  .expense-item__description {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 1;
+  }
+
+  .expense-item__description h2 {
+    font-size: 1.25rem;
+  }
+
+  .expense-item__price {
+    font-size: 1.25rem;
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+.update-button {
+    font: inherit;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 0px;
+    background-color: #a892ee;
+    color: white;
+    border-radius: 12px;
+    margin-right: 1rem;
+}
+
+.update-button:hover {
+  font-size: large;
+}
