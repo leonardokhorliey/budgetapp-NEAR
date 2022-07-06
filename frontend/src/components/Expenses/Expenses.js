@@ -35,6 +35,22 @@ const Expenses = (props) => {
     return new Date(expense.expectedCompleteDate).getFullYear().toString() === filteredYear && expense.status === viewKeys[selectedView];
   });
 
+  const totalExpenseValue = filteredExpenses.reduce((acc, curr) => {
+    return !isNaN(parseFloat(curr.amount)) ? acc + parseFloat(curr.amount): acc;
+  }, 0).toString();
+
+  const formatValue = (value) => {
+    let i = value.length%3 - 1;
+
+    let arr = value.split('');
+    while (i < arr.length - 1) {
+      arr[i] += ","
+      i += 3
+    }
+
+    return arr.join('') + ".00";
+  }
+
   return (
     <div>
       <Card className='expenses'>
@@ -47,11 +63,15 @@ const Expenses = (props) => {
         <ExpensesChart expenses={filteredExpenses} />
         <div className="expenses-heading">
           <h1>{`${selectedView} Expenses`}</h1>
-          <select value={selectedView} onChange={changeSelectedView}>
-            <option value='Pending'>Pending</option>
-            <option value='Cleared'>Cleared</option>
-            <option value='Dropped'>Dropped</option>
-          </select>
+          <div style={{textAlign: "right"}}>
+            <p style={{fontSize: "1.25rem", fontWeight: "bold"}}>${formatValue(totalExpenseValue)}</p>
+            <select value={selectedView} onChange={changeSelectedView}>
+              <option value='Pending'>Pending</option>
+              <option value='Cleared'>Cleared</option>
+              <option value='Dropped'>Dropped</option>
+            </select>
+          </div>
+          
         </div>
         
         <ExpensesList items={filteredExpenses} updateExpense={props.updateExpense} clearExpense={props.clearExpense} removeExpense={props.removeExpense} 

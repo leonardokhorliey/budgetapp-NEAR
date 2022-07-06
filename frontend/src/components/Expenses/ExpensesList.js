@@ -14,6 +14,7 @@ const ExpensesList = (props) => {
         <ExpenseItem
           key={expense.id}
           title={expense.title}
+          description={expense.description}
           amount={expense.amount}
           date={expense.expectedCompleteDate}
           updateExpense= {(amt, date_)=> props.updateExpense(expense.id, amt, date_)}

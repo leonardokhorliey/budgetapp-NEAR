@@ -13,14 +13,30 @@ Before you compile this code, you will need to install [Node.js] ≥ 12
 Exploring The Code
 ==================
 
-1. The main smart contract code lives in `assembly/index.ts`. You can compile
-   it with the `./compile` script.
+1. The main smart contract code lives in `assembly/index.ts`. 
 2. Tests: You can run smart contract tests with the `./test` script. This runs
    standard AssemblyScript tests using [as-pect].
 
+Running the Contract Locally
+==================
 
-  [smart contract]: https://docs.near.org/docs/develop/contracts/overview
-  [AssemblyScript]: https://www.assemblyscript.org/
-  [create-near-app]: https://github.com/near/create-near-app
-  [Node.js]: https://nodejs.org/en/download/package-manager/
-  [as-pect]: https://www.npmjs.com/package/@as-pect/cli
+You can run various aspects of the contract by via a bash terminal by running `./scripts/[FILE_PATH]` where `FILE_PATH` is the name of the script for the particular function you want to run as in the table below
+
+
+| Function | FilePath |
+| -------- | -------- |
+| Deploy Contract | `deploy.sh` |
+| Create A New Expense | `create.sh` |
+| Get All Expenses | `getexpenses.sh` |
+| Update Expense Amount | `update-amount.sh` |
+| Clear An Expense | `clear-expense.sh` |
+| Drop An Expense | `drop-expense.sh` |
+| Delete An Expense | `delete-expense.sh` |
+
+
+
+## Note
+You can edit the scripts file should you need to deploy the contract at another address.
+
+
+  

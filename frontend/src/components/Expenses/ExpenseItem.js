@@ -37,7 +37,10 @@ const ExpenseItem = (props) => {
         
         <div className='expense-item__description'>
         <ExpenseDate date={props.date} />
-          <h2>{props.title}</h2>
+          <div className="title-desc"> 
+            <h2>{props.title}</h2>
+            <p>{props.description}</p>
+          </div>
           {props.selectedView === 0 && <button className="update-button" onClick= {handleStartUpdate}>Update</button>}
           <button className="update-button" onClick= {props.selectedView === 0 ? props.clearExpense : props.deleteExpense}>
             {props.selectedView === 0 ? "Clear": "Delete"}
