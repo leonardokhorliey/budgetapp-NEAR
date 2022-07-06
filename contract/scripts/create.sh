@@ -1,19 +1,12 @@
 #!/bin/bash
 
 
-read -p "Contract Address: " contract
-echo
+
 read -p "Signing Wallet Address: " wallet
-echo
-read -p "Enter your expense title: " title
-echo
-read -p "Enter description of expense: " description
-echo
-read -p "Expected completion Date in YYYY-MM-DD: " date
-echo
-read -p "Budget ampunt for Expense: " amount
+
+
 
 echo $wallet "creating New Expense"
 
 
-near call $contract createNewExpense '{'"title":$title','"description":${description}','"amount":${amount}','"completeDate":${date}','"createdAt":$(date "+%Y-%m-%dT%H:%M:%S")'}' --accountId $wallet
+near call expenses.leonard0.testnet createNewExpense '{"title":"House","description":"New Home for the family","amount":"200000","completeDate":"2023-02-03","createdAt":"2022-07-23"}' --accountId $wallet

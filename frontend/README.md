@@ -1,7 +1,7 @@
-BudgetApp FrontEnd
+BudGitt FrontEnd
 ========
 
-FrontEnd Source Code for BudgetApp
+FrontEnd Source Code for BudGitt
 
 Running Locally
 ==============

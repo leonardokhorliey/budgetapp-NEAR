@@ -12,4 +12,4 @@ echo "Attempting to create contract account $contract on wallet address $wallet 
 
 near create-account $contract --masterAccount $wallet --initialBalance $balance
 
-near deploy $2 --wasmFile=./build/release/expense-contract.wasm
+near deploy $contract --wasmFile=./build/release/expense-contract.wasm
